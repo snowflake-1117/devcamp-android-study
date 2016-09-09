@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SumApplication</string>
+    <string name="goto_next_activity">Go To Next Activity</string>
+</resources>
