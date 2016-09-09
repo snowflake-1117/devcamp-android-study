@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">First</string>
+
+    <string name="val1">val1</string>
+    <string name="val2">val2</string>
+    <string name="result">결과</string>
+</resources>
