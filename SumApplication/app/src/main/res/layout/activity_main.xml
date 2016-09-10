@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.acious.sumapplication.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <EditText
         android:id="@+id/main_one_num_edittxt"
@@ -16,15 +16,15 @@
 
     <EditText
         android:id="@+id/main_two_num_edittxt"
-        android:layout_below="@id/main_one_num_edittxt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_one_num_edittxt" />
 
     <Button
         android:id="@+id/main_next_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/goto_next_activity"
         android:layout_alignParentBottom="true"
-        android:onClick="moveToResultActivity"/>
+        android:onClick="clickSumButton"
+        android:text="@string/goto_next_activity" />
 </RelativeLayout>
