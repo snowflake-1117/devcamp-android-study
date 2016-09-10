@@ -12,23 +12,28 @@ import com.example.first.presenter.SumResultPresenter;
  * Created by secret on 9/10/16.
  */
 public class SumResult extends Activity implements SumResultContract.View {
-    private TextView sumResult;
-    private SumResultContract.UserAction presenter;
+    private TextView mSumResult;
+    private SumResultContract.UserAction mSumResultPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sum_result_layout);
 
-        presenter = new SumResultPresenter(this, this);
+        mSumResultPresenter = new SumResultPresenter(this);
 
-        sumResult = (TextView) findViewById(R.id.sum_result);
+        initView();
 
-        presenter.sumResult();
+        mSumResultPresenter.sumResult();
+    }
+
+    @Override
+    public void initView() {
+        mSumResult = (TextView) findViewById(R.id.sum_result);
     }
 
     @Override
     public void setText(String text) {
-        sumResult.setText(text);
+        mSumResult.setText(text);
     }
 }

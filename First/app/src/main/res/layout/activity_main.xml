@@ -20,7 +20,7 @@
             android:text="@string/val1" />
 
         <EditText
-            android:id="@+id/val1"
+            android:id="@+id/val1_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -35,7 +35,7 @@
             android:text="@string/val2" />
 
         <EditText
-            android:id="@+id/val2"
+            android:id="@+id/val2_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

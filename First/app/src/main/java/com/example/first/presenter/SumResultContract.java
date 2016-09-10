@@ -5,6 +5,7 @@ package com.example.first.presenter;
  */
 public interface SumResultContract {
     interface View {
+        void initView();
         void setText(String text);
     }
 

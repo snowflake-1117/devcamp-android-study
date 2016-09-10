@@ -1,5 +1,6 @@
 package com.example.first.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,21 +12,18 @@ import com.example.first.presenter.MainContract;
 import com.example.first.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
-    private EditText valEdit1;
-    private EditText valEdit2;
-    private MainContract.UserAction presenter;
+    private EditText mValEdit1;
+    private EditText mValEdit2;
+    private MainContract.UserAction mMainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = new MainPresenter(this);
+        mMainPresenter = new MainPresenter(this);
 
-        valEdit1 = (EditText) findViewById(R.id.val1);
-        valEdit2 = (EditText) findViewById(R.id.val2);
-
-        findViewById(R.id.submit_button).setOnClickListener(plusResult);
+        initView();
     }
 
     Button.OnClickListener plusResult = new View.OnClickListener() {
@@ -33,14 +31,30 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.submit_button:
-                    int val1 = Integer.parseInt(valEdit1.getText().toString());
-                    int val2 = Integer.parseInt(valEdit2.getText().toString());
+                    int val1 = Integer.parseInt(mValEdit1.getText().toString());
+                    int val2 = Integer.parseInt(mValEdit2.getText().toString());
 
-                    presenter.onResultButtonClick(getApplication(), val1, val2);
+                    mMainPresenter.onResultButtonClick(val1, val2);
                     break;
                 default:
                     break;
             }
         }
     };
+
+    @Override
+    public void initView() {
+        mValEdit1 = (EditText) findViewById(R.id.val1_edit_text);
+        mValEdit2 = (EditText) findViewById(R.id.val2_edit_text);
+
+        findViewById(R.id.submit_button).setOnClickListener(plusResult);
+    }
+
+    @Override
+    public void activityChange(int sum) {
+        Intent sumResult = new Intent(getApplicationContext(), SumResult.class);
+        sumResult.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        sumResult.putExtra("sum", sum);
+        startActivity(sumResult);
+    }
 }
