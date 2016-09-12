@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">더하기 앱</string>
     <string name="goto_next_activity">다음 액티비티로 이동</string>
+    <string name="sumchar">+</string>
+    <string name="main_input1_hint">첫번째</string>
+    <string name="main_input2_hint">두번째</string>
 </resources>

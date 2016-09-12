@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SumApplication</string>
     <string name="goto_next_activity">Go To Next Activity</string>
+    <string name="sumchar">+</string>
+    <string name="main_input1_hint">first</string>
+    <string name="main_input2_hint">second</string>
 </resources>

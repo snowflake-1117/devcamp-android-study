@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">加算App</string>
+    <string name="goto_next_activity">次の画面に移動</string>
+    <string name="sumchar">+</string>
+    <string name="main_input1_hint">最初</string>
+    <string name="main_input2_hint">二番</string>
+</resources>
