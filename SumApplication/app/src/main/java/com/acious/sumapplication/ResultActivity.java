@@ -35,7 +35,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private void changeColorbyAPI() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            mResultTextView.setTextColor(getColor(android.R.color.holo_red_light));
+            mResultTextView.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_light));
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mResultTextView.setTextColor(ContextCompat.getColor(this, android.R.color.holo_blue_bright));
         } else {
