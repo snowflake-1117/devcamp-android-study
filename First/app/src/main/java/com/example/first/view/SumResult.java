@@ -1,6 +1,8 @@
 package com.example.first.view;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -35,5 +37,12 @@ public class SumResult extends Activity implements SumResultContract.View {
     @Override
     public void setText(String text) {
         mSumResult.setText(text);
+
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
+            mSumResult.setTextColor(Color.RED);
+        else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP)
+            mSumResult.setTextColor(Color.BLUE);
+        else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+            mSumResult.setTextColor(Color.GREEN);
     }
 }

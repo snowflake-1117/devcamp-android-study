@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void initView() {
-        mValEdit1 = (EditText) findViewById(R.id.val1_edit_text);
-        mValEdit2 = (EditText) findViewById(R.id.val2_edit_text);
+        mValEdit1 = (EditText) findViewById(R.id.main_val1_edit_text);
+        mValEdit2 = (EditText) findViewById(R.id.main_val2_edit_text);
 
         findViewById(R.id.submit_button).setOnClickListener(plusResult);
     }
