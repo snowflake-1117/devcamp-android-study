@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">My First App</string>
+<string name="main_edit_msg1">最初</string>
+<string name="main_edit_msg2"> 二番</string>
+<string name="button_send">Send</string>
+</resources>
