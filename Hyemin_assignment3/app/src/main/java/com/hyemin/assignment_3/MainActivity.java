@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "call onRestoreInstanceState");
 
-        String videoURL = savedInstanceState.getString("VideoURL");
+        videoURL = savedInstanceState.getString("VideoURL");
 
         videoView = (VideoView) findViewById(R.id.main_videoview);
         videoView.setVideoPath(videoURL);
