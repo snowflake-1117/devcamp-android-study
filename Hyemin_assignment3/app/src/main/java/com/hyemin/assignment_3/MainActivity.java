@@ -11,8 +11,9 @@ import android.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    private static final String KEY_VIDEO_URL = "VIDEO_URL";
 
-    String  videoURL;
+    String videoURL;
     VideoView videoView;
 
     @Override
@@ -21,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         if(savedInstanceState!=null) {
-            videoURL = savedInstanceState.getString("VideoURL");
+            videoURL = savedInstanceState.getString(KEY_VIDEO_URL);
         }
         else{
             videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
-            setContentView(R.layout.activity_main);
-            initView();
         }
+
+        setContentView(R.layout.activity_main);
+        initView();
     }
 
     @Override
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "call onResume");
         super.onResume();
 
-        if(videoView==null){
-            initView();
+        if(videoView.isPlaying()==false){
+            videoView.start();
         }
     }
 
@@ -51,10 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "call onPause");
         super.onPause();
 
-        if(videoView!=null) {
-            videoView.setMediaController(null);
-            videoView = null;
-        }
+        videoView.stopPlayback();
     }
 
     @Override
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "call onSaveInstanceState");
 
-        savedInstanceState.putString("VideoURL", videoURL);
+        savedInstanceState.putString(KEY_VIDEO_URL, videoURL);
     }
 
     @Override
@@ -105,14 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "call onRestoreInstanceState");
 
-        videoURL = savedInstanceState.getString("VideoURL");
-
-        videoView = (VideoView) findViewById(R.id.main_videoview);
-        videoView.setVideoPath(videoURL);
-
-        final MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-
-        videoView.start();
+        videoURL = savedInstanceState.getString(KEY_VIDEO_URL);
     }
 }
