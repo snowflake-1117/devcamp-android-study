@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">덧셈 프로그램</string>
+    <string name="main_msg1_edittxt">첫 번째 수</string>
+    <string name="main_msg2_edittxt">두 번째 수</string>
+    <string name="main_result_button">다음 액티비티로 이동</string>
+</resources>

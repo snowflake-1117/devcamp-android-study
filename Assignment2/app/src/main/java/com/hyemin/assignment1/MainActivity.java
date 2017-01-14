@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.hyemin.assignment1.MESSAGE";
+    public final static String RESULT = "result";
     EditText editText1;
     EditText editText2;
 
@@ -16,23 +16,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initView();
+    }
+
+    public void initView(){
         editText1 = (EditText) findViewById(R.id.main_msg1_edittxt);
         editText2 = (EditText) findViewById(R.id.main_msg2_edittxt);
     }
 
     public void addResult(View view){
         int num1, num2;
-        int sum;
+        String sum;
 
-        String firstNum = editText1.getText().toString();
-        String secondNum = editText2.getText().toString();
+        num1 = Integer.parseInt(editText1.getText().toString());
+        num2 = Integer.parseInt(editText2.getText().toString());
 
-        num1 = Integer.parseInt(firstNum);
-        num2 = Integer.parseInt(secondNum);
-        sum = num1 + num2;
+        sum = Integer.toString(num1+num2);
 
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, Integer.toString(sum));
+        intent.putExtra(RESULT, sum);
         startActivity(intent);
     }
 }

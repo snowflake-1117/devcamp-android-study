@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Add </string>
+    <string name="app_name">Sum Program</string>
     <string name="main_msg1_edittxt">First number</string>
     <string name="main_msg2_edittxt">Second number</string>
     <string name="main_result_button">GO TO NEXT ACTIVITY</string>

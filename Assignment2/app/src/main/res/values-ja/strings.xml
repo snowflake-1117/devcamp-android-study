@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">結果を追加</string>
+    <string name="main_msg1_edittxt">最初の番号</string>
+    <string name="main_msg2_edittxt">2番目の番号</string>
+    <string name="main_result_button">次のアクティビティに進む</string>
+</resources>
