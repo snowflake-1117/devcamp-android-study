@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight="@dimen/activity_horizontal_margin"
+        android:inputType="number"
         android:textSize="20sp"
         android:hint="@string/main_msg1_edittxt"/>
 
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingRight ="@dimen/activity_horizontal_margin"
+        android:inputType="number"
         android:textSize="20sp"
         android:hint="@string/main_msg2_edittxt"/>
 
